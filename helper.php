@@ -120,7 +120,7 @@ class helper_plugin_orphanswanted extends DokuWiki_Plugin {
             if( (0 < strlen(ltrim($link)))
             and ! preg_match('/^[a-zA-Z0-9\.]+>{1}.*$/u',$link) // Interwiki
             and ! preg_match('/^\\\\\\\\[\w.:?\-;,]+?\\\\/u',$link) // Windows Share
-            and ! preg_match('#^([a-z0-9\-\.+]+?)://#i',$link) // external link (accepts all protocols)
+            and ! preg_match('#^ *([a-z0-9\-\.+]+?)://#i',$link) // external link (accepts all protocols)
             and ! preg_match('<'.PREG_PATTERN_VALID_EMAIL.'>',$link) // E-Mail (pattern above is defined in inc/mail.php)
             and ! preg_match('!^#.+!',$link) // inside page link (html anchor)
             ) {
